@@ -1,0 +1,24 @@
+image: node:latest
+# Functions that should be executed before the build script is run
+stages:
+  - build
+  - deploy
+
+before_script:
+  - npm install -g gulp cli
+  - npm install
+
+build:
+  stage: build
+  script:
+    - gulp build
+
+pages:
+  stage: deploy
+  script:
+    - gulp deploy
+  artifacts:
+    paths: -public
+  only: -dev2
+  # This ensures that only pushes to the default branch will trigger
+  # a pages deploy

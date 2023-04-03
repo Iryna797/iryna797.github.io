@@ -1,0 +1,246 @@
+.you-get {
+  background: rgba(0, 0, 0, 0.0001);
+  font-family: "Montserrat";
+}
+
+.youget__grid {
+  display: grid;
+  padding-left: 90px;
+  padding-top: 90px;
+  padding-bottom: 33px;
+  grid-template-columns: 0.9fr 1 fr;
+  gap: 0 30px;
+  justify-items: center;
+  align-items: flex-end;
+  grid-template-areas:
+    "item1 slogan "
+    "item2 picture"
+    "item3 picture"
+    "item4 picture";
+}
+
+.youget__grid__item1 {
+  grid-area: item1;
+  display: grid;
+  justify-items: center;
+  align-items: start;
+  grid-template-columns: auto 405px;
+  column-gap: 18px;
+}
+
+.youget__grid__item2 {
+  grid-area: item2;
+  display: grid;
+  justify-items: center;
+  align-items: start;
+  grid-template-columns: auto 405px;
+  column-gap: 42px;
+}
+
+.youget__grid__item3 {
+  grid-area: item3;
+  display: grid;
+  justify-items: center;
+  align-items: start;
+  grid-template-columns: auto 390px;
+  column-gap: 57px;
+}
+
+.youget__grid__item4 {
+  grid-area: item4;
+  display: grid;
+  justify-items: center;
+  align-items: start;
+  grid-template-columns: auto 390px;
+  column-gap: 53px;
+}
+
+.youget__grid__item5 {
+  grid-area: slogan;
+  align-self: flex-start;
+  justify-self: left;
+}
+.youget__grid__item6 {
+  grid-area: picture;
+  width: 100%;
+  justify-content: end;
+  img {
+    width: 100%;
+  }
+}
+
+.youget__grid__slogan {
+  padding-left: 20px;
+  padding-right: 20px;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 50px;
+  color: #8d81ac;
+}
+
+.youget__grid__slogan::before {
+  content: "<";
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 50px;
+  color: #8d81ac;
+}
+
+.youget__grid__slogan::after {
+  content: ">";
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 50px;
+  color: #8d81ac;
+}
+
+.youget__grid__itemtitle {
+  font-size: 16px;
+  line-height: 21px;
+  color: #323232;
+  font-weight: 400;
+  text-align: left;
+}
+
+.youget__grid__itemtext {
+  margin-top: 15px;
+  font-size: 14px;
+  line-height: 21px;
+  color: #848e97;
+  font-weight: 400;
+}
+
+// @media
+@media (min-width: 481px) and (max-width: 992px) {
+  .you-get {
+    background: #fff;
+  }
+  .youget__grid {
+    display: grid;
+    padding: 0;
+    grid-template-columns: auto;
+    gap: 50px 0;
+    justify-items: center;
+    align-items: flex-end;
+    grid-template-areas:
+      "slogan"
+      "item1"
+      "item2"
+      "item3"
+      "item4"
+      "picture";
+
+    .youget__grid__item1 {
+      padding: 0 36px 0;
+      grid-area: item1;
+      grid-template-columns: auto auto;
+    }
+
+    .youget__grid__item2 {
+      padding: 0 30px 0;
+      grid-area: item2;
+      grid-template-columns: auto auto;
+    }
+
+    .youget__grid__item3 {
+      padding: 0 46px 0;
+      grid-area: item3;
+      grid-template-columns: auto auto;
+    }
+
+    .youget__grid__item4 {
+      padding: 0 40px 0;
+      grid-area: item4;
+      grid-template-columns: auto auto;
+    }
+
+    .youget__grid__item5 {
+      padding: 0 30px 0;
+      grid-area: slogan;
+      justify-self: center;
+    }
+
+    .youget__grid__item6 {
+      grid-area: picture;
+      width: 100%;
+      justify-content: end;
+      img {
+        width: 100%;
+      }
+    }
+    .youget__grid__slogan {
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+}
+
+// Макет 320 пикселей показывает как будет выглядеть контент при размере экрана от 320 до 480 (!) пикселей.
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .youget {
+    background: #fff;
+    padding: 0;
+  }
+
+  .youget__grid {
+    grid-template-columns: 100%;
+    justify-items: center;
+    padding: 0 0 0;
+    grid-template-rows: none;
+    gap: 38px 0;
+    grid-template-areas:
+      "slogan"
+      "item1"
+      "item2"
+      "item3"
+      "item4"
+      "picture";
+
+    &__item1,
+    &__item2,
+    &__item3,
+    &__item4 {
+      grid-template-columns: 100%;
+      padding: 0 20px 0;
+      gap: 25px;
+      padding: 0 5px 0;
+    }
+    &__slogan {
+      //width: 230px;
+      padding: 0 20px 0;
+      margin: 120px auto 0;
+      font-size: 32px;
+      text-align: center;
+      line-height: 38px;
+      color: #8d81ac;
+      &::after,
+      &::before {
+        font-size: 32px;
+        line-height: 38px;
+      }
+      &::after {
+        content: ">";
+      }
+      &::before {
+        content: "<";
+      }
+    }
+
+    .youget__grid__itemtitle {
+      font-size: 16px;
+      line-height: 16px;
+      color: #323232;
+      font-weight: 400;
+      text-align: center;
+    }
+    .youget__grid__itemtext {
+      margin-top: 15px;
+      font-size: 14px;
+      line-height: 21px;
+      color: #848e97;
+      font-weight: 400;
+      text-align: center;
+    }
+  }
+}

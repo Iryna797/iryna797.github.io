@@ -1,0 +1,171 @@
+.sub-price {
+  background-image: url(../../img/section_pricing/pricing-bg.png);
+  background-size: cover;
+  background-position: center;
+  font-family: "Montserrat";
+  &__title {
+    margin: 0;
+    padding: 83px 0 61px;
+    font-size: 48px;
+    line-height: 50px;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+  }
+  &__cardBox {
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    gap: 0 15px;
+    grid-template-columns: 257px 257px 300px 257px;
+    padding: 0 0 100px;
+    justify-content: center;
+    @media (max-width: 1130px) and (min-width: 992px) {
+      grid-template-columns: 22% 22% 30% 22%;
+      gap: 10px;
+      .sub-price__card {
+        width: 99%;
+      }
+    }
+  }
+  &__card {
+    @include flex-center;
+    width: 257px;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.11);
+    &:first-child {
+      .sub-price__card__desc2 {
+        opacity: 0;
+      }
+    }
+    &:nth-child(3) {
+      height: 560px;
+      width: 300px;
+      justify-content: flex-start;
+      background-color: #463048;
+      .sub-price__card__label {
+        background-color: rgba(0, 0, 0, 0.11);
+        padding: 43px 0;
+      }
+      .sub-price__card__price,
+      .sub-price__card__dollar {
+        font-size: 82px;
+        margin: 0 0 16px;
+      }
+      .sub-price__card__descbox {
+        @include flex-center;
+        flex-direction: column;
+      }
+      .sub-price__card__desc1 {
+        margin: 66px 0 0;
+      }
+      .sub-price__card__desc2 {
+        margin: 0 0 86px;
+      }
+      .sub-price__card__undrTxt {
+        margin: 0 0 45px;
+      }
+    }
+    &__label {
+      text-transform: uppercase;
+      padding: 36px 0;
+      font-size: 24px;
+      line-height: 24px;
+      color: #fff;
+      background-color: rgba(255, 255, 255, 0.06);
+      margin: 0;
+      width: 100%;
+      text-align: center;
+      font-weight: 400;
+    }
+    &__price,
+    &__dollar {
+      margin: 10px 0 10px;
+      font-size: 60px;
+      line-height: 90px;
+      font-weight: 700;
+      color: #fff;
+    }
+    &__dollar {
+      font-weight: 400;
+    }
+    &__undrTxt {
+      font-size: 14px;
+      line-height: 16px;
+      margin: 0 0 38px;
+      color: #fff;
+    }
+    &__line {
+      width: 60px;
+      height: 5px;
+      background-color: #8d81ac;
+    }
+    &__desc1,
+    &__desc2 {
+      color: #fff;
+      line-height: 18px;
+    }
+    &__desc1 {
+      margin: 36px 0 0;
+    }
+    &__desc2 {
+      margin: 0 0 36px;
+    }
+    &__purchase {
+      text-decoration: none;
+      text-transform: uppercase;
+      border: none;
+      padding: 15.5px 37px;
+      background-color: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      border-radius: 50px;
+      margin: 0 0 36px;
+    }
+  }
+}
+
+@media (min-width: 481px) and (max-width: 992px) {
+  .sub-price {
+    &__cardBox {
+      grid-template-columns: none;
+      grid-template-areas:
+        "item1 item2"
+        "item3 item4";
+      gap: 30px 25px;
+    }
+
+    &__card {
+      &:first-child {
+        justify-self: flex-end;
+      }
+      &:last-child {
+        align-self: flex-start;
+        margin: 40px 0 0;
+      }
+    }
+    @media (min-width: 481px) and (max-width: 610px) {
+      &__card:not(:nth-child(3)) {
+        width: 220px;
+      }
+      &__card:nth-child(3) {
+        width: 240px;
+      }
+    }
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .sub-price {
+    background-image: url(../../img/section_pricing/pricing-bg.png);
+    &__title {
+      font-size: 28px;
+      padding: 14px 10px 32px;
+    }
+    &__cardBox {
+      grid-template-columns: 257px;
+      gap: 18px;
+      padding: 0 0 10px;
+    }
+  }
+}
