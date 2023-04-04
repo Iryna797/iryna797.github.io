@@ -10,7 +10,7 @@ const sass = gulpSass(dartSass);
 export const scss = () => {
   return (
     app.gulp
-      .src(app.path.src.scss, { sourcemaps: app.isDev })
+      .src(app.path.src.scss)
       .pipe(
         app.plugins.plumber(
           app.plugins.notify.onError({
@@ -36,13 +36,13 @@ export const scss = () => {
           })
         )
       )
-      .pipe(app.plugins.if(app.isBuild, cleanCss()))
+      .pipe(cleanCss())
       .pipe(
         rename({
           extname: '.min.css',
         })
       )
-      .pipe(app.gulp.dest(app.path.build.css, { sourcemaps: `.` }))
+      .pipe(app.gulp.dest(app.path.build.css))
       .pipe(app.plugins.browsersync.stream())
   );
 };
