@@ -74,7 +74,7 @@
       color: var(--main-white-text);
       font-weight: bold;
       // font-size: 8.2rem;
-      @include adaptiv-value("font-size", 82, 48, 1);
+      @include adaptiv-value("font-size", 48, 48, 1);
       margin: 8rem 0 1rem;
       @include adaptiv-value("margin-top", 80, 50, 1);
     }
@@ -82,7 +82,7 @@
       font-family: Lato;
       color: var(--second-color-text);
       // font-size: 3rem;
-      @include adaptiv-value("font-size", 30, 18, 18);
+      @include adaptiv-value("font-size", 18, 18, 18);
     }
     .product-version {
       color: var(--main-color-text);
